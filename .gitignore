@@ -44,3 +44,6 @@ Temporary Items
 
 # custom config
 *.iml
+.gradle
+.idea
+build
