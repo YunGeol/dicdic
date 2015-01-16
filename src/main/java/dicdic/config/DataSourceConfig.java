@@ -1,5 +1,7 @@
 package dicdic.config;
 
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -10,9 +12,6 @@ import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
 import java.sql.Driver;
 
-/**
- * Created by 1001073 on 2014-12-18.
- */
 @Configuration
 public class DataSourceConfig {
 
@@ -40,5 +39,13 @@ public class DataSourceConfig {
     ) throws PropertyVetoException
     {
         return new SimpleDriverDataSource(BeanUtils.instantiateClass(driverClass), url, user, password);
+    }
+
+
+    @Bean
+    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+        final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+        sessionFactory.setDataSource(dataSource);
+        return sessionFactory.getObject();
     }
 }

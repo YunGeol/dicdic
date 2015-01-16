@@ -11,12 +11,7 @@ import org.springframework.security.web.authentication.rememberme.InvalidCookieE
 import org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices;
 import org.springframework.util.DigestUtils;
 
-/**
- * This implementation adds the IP address to the user's remember me token for an
- * additional level of security and non-repudiation.
- *
- * @author Mularien
- */
+
 public class IPTokenBasedRememberMeServices extends TokenBasedRememberMeServices {
 
     private static final ThreadLocal<HttpServletRequest> requestHolder = new ThreadLocal<HttpServletRequest>();

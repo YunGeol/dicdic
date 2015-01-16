@@ -21,10 +21,6 @@ import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by 1001073 on 2014-10-06.
- */
-
 @Configuration
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {

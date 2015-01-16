@@ -1,4 +1,4 @@
-package dicdic.controller;
+package dicdic.controller.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,13 +16,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by 1001073 on 2014-12-23.
- */
 
 @Controller
 @RequestMapping(value="/user")
-public class UserLifecycleController {
+public class UserController {
 
 
     @Autowired
