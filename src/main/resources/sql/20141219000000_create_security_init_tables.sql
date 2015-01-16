@@ -2,9 +2,9 @@ create table users (
       username                varchar2(100)   not null primary key
     , password                varchar2(100)   not null
     , enabled                 number(1,0)     default 0 not null
-    , created_date            TIMESTAMP       not null
+    , created_date            TIMESTAMP
     , created_by              NUMBER
-    , last_modified_date      TIMESTAMP       not null
+    , last_modified_date      TIMESTAMP
     , lasy_modified_by        NUMBER
 );
 create index idx_users_cr_date on users(created_date);
@@ -22,9 +22,9 @@ COMMENT ON COLUMN users.lasy_modified_by   IS '데이터수정자';
 create table authorities (
       username                varchar2(100)   not null
     , authority               varchar2(100)   not null
-    , created_date            TIMESTAMP       not null
+    , created_date            TIMESTAMP
     , created_by              NUMBER
-    , last_modified_date      TIMESTAMP       not null
+    , last_modified_date      TIMESTAMP
     , lasy_modified_by        NUMBER
     , foreign key (username)  references users (username)
     , primary key (username, authority)
@@ -44,9 +44,9 @@ COMMENT ON COLUMN authorities.lasy_modified_by     IS '데이터수정자';
 create table groups (
       id                      number          not null primary key
     , group_name              varchar2(100)   not null
-    , created_date            TIMESTAMP       not null
+    , created_date            TIMESTAMP
     , created_by              NUMBER
-    , last_modified_date      TIMESTAMP       not null
+    , last_modified_date      TIMESTAMP
     , lasy_modified_by        NUMBER
 );
 create index idx_groups_cr_date on groups(created_date);
@@ -66,9 +66,9 @@ COMMENT ON COLUMN groups.lasy_modified_by               IS '데이터수정자';
 create table group_authorities (
       group_id                number          not null
     , authority               varchar2(100)   not null
-    , created_date            TIMESTAMP       not null
+    , created_date            TIMESTAMP
     , created_by              NUMBER
-    , last_modified_date      TIMESTAMP       not null
+    , last_modified_date      TIMESTAMP
     , lasy_modified_by        NUMBER
     , foreign key (group_id)  references groups (id)
     , primary key (group_id, authority)
@@ -88,9 +88,9 @@ COMMENT ON COLUMN group_authorities.lasy_modified_by    IS '데이터수정자';
 create table group_members (
       username                varchar2(100)   not null
     , group_id                number          not null
-    , created_date            TIMESTAMP       not null
+    , created_date            TIMESTAMP
     , created_by              NUMBER
-    , last_modified_date      TIMESTAMP       not null
+    , last_modified_date      TIMESTAMP
     , lasy_modified_by        NUMBER
     , foreign key (group_id)  references groups (id)
     , primary key (username, group_id)

@@ -25,7 +25,7 @@ repositories {
     maven { url "http://repo.spring.io/snapshot" }
     maven { url "http://repo.spring.io/milestone" }
 
-
+    maven { url "file://${projectDir}/extra-libs"}
 
     //maven { url "http://mvn.skplanet.com/content/groups/public/" }
 
@@ -58,6 +58,9 @@ dependencies {
 
     // lombok
     compile("org.projectlombok:lombok:1.14.8")
+
+
+    compile("org.adrianwalker:multiline-string:0.1.1")
 
 
     // http://mesir.googlecode.com/svn/trunk/mavenrepo

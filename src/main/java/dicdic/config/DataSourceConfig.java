@@ -2,6 +2,7 @@ package dicdic.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +14,7 @@ import java.beans.PropertyVetoException;
 import java.sql.Driver;
 
 @Configuration
+@MapperScan(basePackages="dicdic.persistence.mapper")
 public class DataSourceConfig {
 
     /*
