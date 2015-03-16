@@ -62,6 +62,7 @@ dependencies {
 
     compile("org.adrianwalker:multiline-string:0.1.1")
 
+    compile("com.mangofactory:swagger-springmvc:0.9.4")
 
     // http://mesir.googlecode.com/svn/trunk/mavenrepo
     runtime("com.oracle:ojdbc14:10.2.0.4.0")

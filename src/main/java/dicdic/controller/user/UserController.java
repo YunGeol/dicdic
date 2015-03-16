@@ -69,7 +69,7 @@ public class UserController {
 
 
     @RequestMapping(value="/enabled/{enabled}", method= RequestMethod.PUT)
-    public String deleteUser(
+    public String changeEnableOrDisable(
             @RequestParam("username") String username,
             @RequestParam("password") String password,
             @PathVariable("enabled")  int    enabled  )

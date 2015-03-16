@@ -9,6 +9,7 @@ import dicdic.controller.dictionary.res.SelectDictionaryRes;
 import dicdic.persistence.domain.Dictionary;
 import dicdic.persistence.mapper.DictionaryMapper;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

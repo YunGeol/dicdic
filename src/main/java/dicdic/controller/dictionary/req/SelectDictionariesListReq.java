@@ -17,8 +17,8 @@ public class SelectDictionariesListReq extends CommonReq {
     @DecimalMin(value="1", message = "페이지별 rows개수가 유효하지 않습니다.")
     private Integer size;
 
-    @NotNull(message = "현재 페이지 번호(단, 1부터 시작함) 누락")
-    @DecimalMin(value="1",message = "현재 페이지 번호(단, 1부터 시작함)가 유효하지 않습니다.")
+    @NotNull(message = "현재 페이지 번호(1부터 시작함) 누락")
+    @DecimalMin(value="1",message = "현재 페이지 번호(1부터 시작함)가 유효하지 않습니다.")
     private Integer page;
 
     private String word;
