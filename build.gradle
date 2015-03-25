@@ -64,6 +64,9 @@ dependencies {
 
     compile("com.mangofactory:swagger-springmvc:0.9.4")
 
+    compile("org.ajar:swagger-spring-mvc-ui:0.4")
+
+
     // http://mesir.googlecode.com/svn/trunk/mavenrepo
     runtime("com.oracle:ojdbc14:10.2.0.4.0")
 

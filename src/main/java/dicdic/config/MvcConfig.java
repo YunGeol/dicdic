@@ -14,45 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class MvcConfig extends WebMvcConfigurerAdapter
 {
-    /**
-     * -- swagger 관련 설정 시작
-     */
-    private SpringSwaggerConfig springSwaggerConfig;
 
-    /**
-     * Required to autowire SpringSwaggerConfig
-     */
-    @Autowired
-    public void setSpringSwaggerConfig(SpringSwaggerConfig springSwaggerConfig) {
-        this.springSwaggerConfig = springSwaggerConfig;
-    }
-
-    /**
-     * Every SwaggerSpringMvcPlugin bean is picked up by the swagger-mvc framework - allowing for multiple
-     * swagger groups i.e. same code base multiple swagger resource listings.
-     */
-    @Bean
-    public SwaggerSpringMvcPlugin swaggerSpringMvcPlugin(){
-        return new SwaggerSpringMvcPlugin(this.springSwaggerConfig)
-                .apiInfo(apiInfo())
-                .swaggerGroup("group01")
-                .includePatterns("/.*");
-    }
-
-    private ApiInfo apiInfo() {
-        ApiInfo apiInfo = new ApiInfo(
-                "Syrup Store IS Admin (IA)",
-                "..Description",
-                "..terms of service",
-                "..Contact Email",
-                "..Licence Type",
-                "..License URL"
-        );
-        return apiInfo;
-    }
-    /**
-     * -- swagger 관련 설정 끝
-     */
 
 
     /*
