@@ -51,6 +51,8 @@ public class DictionaryController {
     @Multiline private String html;
 
 
+
+
     @ResponseBody
     @RequestMapping(value = "/{word}", method = RequestMethod.GET)
     public SelectDictionaryRes selectDictionary(@Valid SelectDictionaryReq selectDictionaryReq) {
